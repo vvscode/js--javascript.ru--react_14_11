@@ -31,7 +31,7 @@ class CommentList extends Component {
     render() {
       return (<div className="comment-list">
         {/*Вот тут ты перемудрил, не советую так писать. В остальном все ок*/}
-        {this[this.state.isOpen ? 'renderOpened' : 'renderClosed']()}
+        {this.state.isOpen ? this.renderOpened() : this.renderClosed()}
       </div>)
     }
 

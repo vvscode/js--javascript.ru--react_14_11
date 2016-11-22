@@ -34,7 +34,7 @@ class ArticleList extends Component {
 ArticleList.propTypes = {
     articles: arrayOf(shape({
       ...ARTICLE,
-      comments: array(shape(COMMENT))
+      comments: arrayOf(shape(COMMENT))
     })).isRequired,
     toggleOpen: func.isRequired,
 

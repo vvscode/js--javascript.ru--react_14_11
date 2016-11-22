@@ -1,10 +1,7 @@
 import { PropTypes } from 'react';
 
 const {
-  array,
   number,
-  oneOfType,
-  shape,
   string,
 } = PropTypes;
 

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import CommentList from './CommentList';
-import { ARTICLE_WITH_COMMENTS } from '../types';
+import { ARTICLE } from '../types';
 
 const {
   array,
@@ -21,7 +21,7 @@ const Article = (props) => {
 Article.defaultProps = { isOpen: false };
 
 Article.propTypes = {
-    article: shape(ARTICLE_WITH_COMMENTS).isRequired,
+    article: shape(ARTICLE).isRequired,
     isOpen: bool.isRequired,
     toggleOpen: func.isRequired
 }
@@ -35,6 +35,5 @@ function getBody({ article, isOpen }) {
         </div>
     )
 }
-
 
 export default Article

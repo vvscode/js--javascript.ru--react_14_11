@@ -1,21 +1,13 @@
 import React from 'react'
 
-export default (Component) => class WrappedComponent extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            isOpen: false
-        }
-    }
-
+const ToggleOpen = (Component) => class WrappedComponent extends React.Component {
     render() {
         return <Component {...this.props} {...this.state} toggleOpen = {this.toggleOpen}/>
     }
 
-    toggleOpen = ev => {
-        this.setState({
-            isOpen: !this.state.isOpen
-        })
-    }
+    state = { isOpen: false }
 
+    toggleOpen = ev => this.setState({ isOpen: !this.state.isOpen })
 }
+
+export default ToggleOpen

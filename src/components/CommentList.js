@@ -13,9 +13,9 @@ class CommentList extends Component {
     }
 
     getButton() {
-        const { comments, isOpen, toggleOpen } = this.props
-        if ( !comments || !comments.length) return <span>No comments yet</span>
-        return <a href="#" onClick = {toggleOpen}>{isOpen ? 'hide' : 'show'} comments</a>
+        const { comments, isOpen, toggleOpen } = this.props;
+        if ( !comments || !comments.length) return (<span>No comments yet</span>);
+        return (<a href="#" onClick = {toggleOpen}>{isOpen ? 'hide' : 'show'} comments</a>);
     }
 
     getList() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Comment from './Comment'
 import toggleOpen from '../decorators/toggleOpen'
-
+//а проптайпсы?
 class CommentList extends Component {
     render() {
         return (

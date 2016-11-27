@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import Comment from './Comment'
 import toggleOpen from '../decorators/toggleOpen'
+import CommentForm from './CommentForm'
 
 class CommentList extends Component {
     static propTypes = {
@@ -14,7 +15,6 @@ class CommentList extends Component {
         comments: []
     }
 
-
     componentWillReceiveProps() {
         //console.log('---', 'CL receiving props')
     }
@@ -23,16 +23,20 @@ class CommentList extends Component {
         //console.log('---', 'CL will update')
     }
 
-
     render() {
         return (
             <div>
                 {this.getButton()}
                 {this.getList()}
+                {this.getForm()}
             </div>
         )
     }
 
+    getForm() {
+      const { comments, isOpen } = this.props;
+      return isOpen || !comments.length ? <CommentForm onSubmit={this.onCommentFormSubmit}/> : null
+    }
 
     getButton() {
         const { comments, isOpen, toggleOpen } = this.props
@@ -45,6 +49,14 @@ class CommentList extends Component {
         if (!isOpen || !comments.length) return null
         const commentItems = comments.map(comment => <li key = {comment.id}><Comment comment = {comment} /></li>)
         return <ul>{commentItems}</ul>
+    }
+
+    onCommentFormSubmit = ({user, title, text}) => {
+      alert(`
+${user}
+${title}
+${text}
+      `.trim())
     }
 }
 

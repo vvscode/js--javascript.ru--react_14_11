@@ -4,7 +4,7 @@ import DayPicker, { DateUtils } from 'react-day-picker';
 
 import 'react-day-picker/lib/style.css';
 
-export default class Range extends Component {
+export default class DateRange extends Component {
   handleDayClick = (e, day) => {
     const range = DateUtils.addDayToRange(day, this.props);
     this.props.onSelectDate(range);
@@ -19,5 +19,9 @@ export default class Range extends Component {
           className="DateRange"
         />
     );
+  }
+
+  static defaultProps = {
+    onSelectDate: () => null
   }
 }

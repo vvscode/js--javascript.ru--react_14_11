@@ -3,6 +3,7 @@ import React,  { Component } from 'react';
 export default class CommentForm extends Component {
   onFormSubmit = (e) => {
     e.preventDefault();
+    //я говорил, что значения лучше хранить в state, refs стоит использовать только в крайних случаях
     const { user, title, text } = this.refs;
     this.props.onSubmit({
       user: user.value,

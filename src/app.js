@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { articles } from './fixtures'
-import ArticleList from './components/ArticleList'
+import Root from './components/Root'
+import store from './store'
 
 
-render(<ArticleList articles = {articles} />, document.getElementById('container'))
+render(<Root store = {store} />, document.getElementById('container'))

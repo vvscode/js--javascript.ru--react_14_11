@@ -1,6 +1,7 @@
 import { articles } from '../fixtures'
 import { DELETE_ARTICLE, SET_FILTER_DATE } from '../constants'
 
+//это дополнительная сложность + потенциальная неконсистентность. лучше проводить фильтрацию по месту использования
 export default (articlesState = { articles, filteredArticles: articles }, action) => {
     articlesState = articlesState.articlesState || articlesState
     const { type, payload } = action
